@@ -4,7 +4,9 @@ const GENERAL_HELP_TEXT = `NAME
 	jinn-tf - A terraform wrapper. Dynamically gen backend config, to make flexible in using 1 code to provision multiple stages, follow some conventions.
 
 SYNOPSIS
-	jinn-tf [< -e | --environment environment > < -t | --stack stack > <terraform-subcommand>] [-h [stack | enviroment]]
+	jinn-tf < -e | --environment environment > < -t | --stack stack > <terraform-subcommand>
+	jinn-tf -h [s | stack | e | enviroment]
+	jinn-tf --configure
 
 DESCRIPTION
 	jinn-tf is a wrapper of terraform command.
@@ -39,19 +41,19 @@ DESCRIPTION
 	If don't want to use direnv, we could use a ".jinn" file on the working directory. Run "golem-tf --configure" to init a new file.
 
 	STATE_BUCKET
-		Default: <current_dir>-remote-state
-		S3 bucket to store terraform state
+		StateBucket - S3 bucket to store terraform state
 
 	AWS_REGION
 		Default: us-east-1
-		Config default region for terraform backend.
+		AwsRegion - Config default region for terraform backend.
 
 	AWS_PROFILE
 		Default: default
-		See AWS CLI configuration.
+		AwsProfile - See AWS CLI configuration.
+
 	STACK_DIR
 		Default: ./stacks
-		Path to directory contains stacks, from current directory.
+		StackDir - Path to directory contains stacks, from current directory.
 `
 
 const STACK_HELP_TEXT = `
