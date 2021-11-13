@@ -10,8 +10,6 @@ import (
 )
 
 func main() {
-	os.Setenv("AWS_SDK_LOAD_CONFIG", "true")
-
 	action := configure.GetAction(os.Args)
 	switch action.Action {
 	case configure.Version:

@@ -12,6 +12,9 @@ import (
 func buildCommand(initConfig configure.InitConfig, tfConfig configure.CommandConfig) *exec.Cmd {
 	command := exec.Command("terraform", tfConfig.Command...)
 	command.Dir = initConfig.StacksPath() + tfConfig.Stack
+	command.Env = os.Environ()
+	command.Env = append(command.Env, "AWS_REGION="+initConfig.AwsRegion)
+	command.Env = append(command.Env, "AWS_PROFILE="+initConfig.AwsProfile)
 	return command
 }
 
