@@ -1,0 +1,6 @@
+[Tf]
+StateBucket = 'chita-infrastructure'
+AwsRegion = 'ap-southeast-1'
+StackDir = 'stacks'
+AwsProfile = 'default'
+

@@ -19,6 +19,7 @@ type BackendContext struct {
 	Stack         string
 	StateFilePath string
 	AwsRegion     string
+	AwsProfile    string
 }
 
 func prepareBackend(initConfig configure.InitConfig, tfConfig configure.CommandConfig) {
@@ -31,6 +32,7 @@ func prepareBackend(initConfig configure.InitConfig, tfConfig configure.CommandC
 		StateBucket:   initConfig.StateBucket,
 		StateFilePath: tfConfig.StateFilePath(),
 		AwsRegion:     initConfig.AwsRegion,
+		AwsProfile:    initConfig.AwsProfile,
 		Environment:   tfConfig.Environment,
 		Stack:         tfConfig.Stack,
 	}

@@ -5,10 +5,11 @@ const BACKEND_TEMPLATE = `
 # Please do not try to change, it'll be reset for every terraform command triggered from jinn-tf
 terraform {
   backend "s3" {
-    bucket                  = "{{.BucketSate}}"
+    bucket                  = "{{.StateBucket}}"
     key                     = "{{.StateFilePath}}"
     region                  = "{{.AwsRegion}}"
     shared_credentials_file = "$HOME/.aws/credentials"
+    profile                 = "{{.AwsProfile}}"
   }
 }
 
